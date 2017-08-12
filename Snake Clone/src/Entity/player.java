@@ -18,10 +18,10 @@ public class player
 	
 	private int moveSpeed =2;
 	
-	public player()
+	public player(int x,int y)
 	{
-		pPosX  = 200;
-		pPosY  = 200;
+		pPosX  = x;
+		pPosY  = y;
 	}
 	public void addToSnake()
 	{
@@ -31,26 +31,37 @@ public class player
 	public void setUp()
 	{
 		moveUp = true;
+		moveDown = false;
+		moveRight = false;
+		moveLeft = false;
 		System.out.println("true");
 	}
 	public void setDown()
 	{
+		moveUp = false;
 		moveDown = true;
+		moveRight = false;
+		moveLeft = false;
 	}
 	public void setLeft()
 	{
+		moveUp = false;
+		moveDown = false;
+		moveRight = false;
 		moveLeft = true;
 	}
 	public void setRight()
 	{
+		moveUp = false;
+		moveDown = false;
 		moveRight = true;
+		moveLeft = false;
 	}
 	public void getNextPostion()
 	{
 		if(moveUp)
 		{
 			pPosY -=moveSpeed;
-			System.out.println("ztrue");
 		}
 		if(moveDown)
 		{

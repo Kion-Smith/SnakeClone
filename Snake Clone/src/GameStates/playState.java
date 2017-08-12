@@ -19,12 +19,13 @@ public class playState extends gameState
 
 	public void init() 
 	{
-		p = new player();		
+		p = new player(200,200);		
 	}
 
 	public void update() 
 	{
 		handleInput();	
+		p.update();
 	}
 
 	public void draw(Graphics2D g) 
@@ -44,20 +45,20 @@ public class playState extends gameState
 		{
 			gsm.setPaused(true);
 		}
-		if(keyHandler.isPressed(keyHandler.UP))
+		if(keyHandler.isPressed(keyHandler.UP)&&keyHandler.anyKeyDown() == true)
 		{
 			p.setUp();
-			System.out.println("move up");
+			System.out.println("true in play State");
 		}
-		if(keyHandler.isPressed(keyHandler.DOWN))
+		if(keyHandler.isPressed(keyHandler.DOWN)&&keyHandler.anyKeyDown() == true)
 		{
 			p.setDown();
 		}
-		if(keyHandler.isPressed(keyHandler.RIGHT))
+		if(keyHandler.isPressed(keyHandler.RIGHT)&&keyHandler.anyKeyDown() == true)
 		{
 			p.setRight();
 		}
-		if(keyHandler.isPressed(keyHandler.LEFT))
+		if(keyHandler.isPressed(keyHandler.LEFT)&&keyHandler.anyKeyDown() == true)
 		{
 			p.setLeft();
 		}
