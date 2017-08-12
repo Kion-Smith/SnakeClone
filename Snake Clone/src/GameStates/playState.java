@@ -5,11 +5,13 @@ import java.awt.Graphics2D;
 
 import Controllers.gameStateManager;
 import Controllers.keyHandler;
+import Entity.apple;
 import Entity.player;
 
 public class playState extends gameState
 {
 	private player p;
+	private apple a;
 
 	public playState(gameStateManager gsm) 
 	{
@@ -19,13 +21,15 @@ public class playState extends gameState
 
 	public void init() 
 	{
-		p = new player(200,200);		
+		p = new player(0,0);
+		a = new apple();
 	}
 
 	public void update() 
 	{
 		handleInput();	
 		p.update();
+		a.update();
 	}
 
 	public void draw(Graphics2D g) 
@@ -36,7 +40,7 @@ public class playState extends gameState
 		g.drawString("This is the play state",400,300);
 		
 		p.draw(g);
-		
+		a.draw(g);
 	}
 
 	public void handleInput() 

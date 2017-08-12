@@ -16,7 +16,7 @@ public class player
 	private int pPosX =0;
 	private int pPosY =0;
 	
-	private int moveSpeed =2;
+	private int moveSpeed =10;
 	
 	public player(int x,int y)
 	{
@@ -79,6 +79,7 @@ public class player
 	public void update()
 	{
 		getNextPostion();
+		System.out.println(pPosX+""+pPosY);
 	}
 	public void draw(Graphics2D g)
 	{
