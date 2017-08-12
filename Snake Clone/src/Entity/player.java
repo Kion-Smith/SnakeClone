@@ -1,17 +1,17 @@
 package Entity;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 public class player 
 {
-	protected boolean moving;
 	protected boolean moveUp;
 	protected boolean moveDown;
 	protected boolean moveRight;
 	protected boolean moveLeft;
 	
-	private int pWidth = 50;
-	private int pHeight = 50;
+	private int pWidth = 20;
+	private int pHeight = 20;
 	
 	private int pPosX =0;
 	private int pPosY =0;
@@ -20,56 +20,58 @@ public class player
 	
 	public player()
 	{
-		
+		pPosX  = 200;
+		pPosY  = 200;
 	}
-	public void add()
+	public void addToSnake()
 	{
 		
 	}
-	
 	
 	public void setUp()
 	{
-		if(moving) 
-			return;
 		moveUp = true;
+		System.out.println("true");
 	}
 	public void setDown()
 	{
-		if(moving) 
-			return;
 		moveDown = true;
 	}
 	public void setLeft()
 	{
-		if(moving) 
-			return;
 		moveLeft = true;
 	}
 	public void setRight()
 	{
-		if(moving) 
-			return;
 		moveRight = true;
 	}
-	public void setPostion()
+	public void getNextPostion()
 	{
-		
-	}
-	public void setMapPostion()
-	{
-		
-	}
-	public boolean isNextPos()
-	{
-		return false;
+		if(moveUp)
+		{
+			pPosY -=moveSpeed;
+			System.out.println("ztrue");
+		}
+		if(moveDown)
+		{
+			pPosY +=moveSpeed;
+		}
+		if(moveRight)
+		{
+			pPosX +=moveSpeed;
+		}
+		if(moveLeft)
+		{
+			pPosX -=moveSpeed;
+		}
 	}
 	public void update()
 	{
-		
+		getNextPostion();
 	}
 	public void draw(Graphics2D g)
 	{
-		
+		g.setColor(Color.YELLOW);
+		g.fillRect(pPosX, pPosY, pWidth, pHeight);
 	}
 }
