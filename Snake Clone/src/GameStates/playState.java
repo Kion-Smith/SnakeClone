@@ -2,6 +2,10 @@ package GameStates;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+
+import javax.swing.ImageIcon;
 
 import Controllers.gameStateManager;
 import Controllers.keyHandler;
@@ -39,6 +43,10 @@ public class playState extends gameState
 		g.fillRect(0,0,800,600);
 		g.setColor(Color.white);
 		g.drawString("This is the play state",400,300);
+		
+		ImageIcon i = new ImageIcon("C:\\Users\\NeonKion\\Downloads\\grid.png");
+		Image image=i.getImage();
+		g.drawImage(image,0,0,null);
 		
 		p.draw(g);
 		a.draw(g);

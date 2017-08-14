@@ -6,8 +6,8 @@ import java.awt.Graphics2D;
 public class apple 
 {
 	
-	private int pWidth = 20;
-	private int pHeight = 20;
+	private int pWidth = 50;
+	private int pHeight = 50;
 	
 	public int aPosX =0;
 	public int aPosY =0;
@@ -41,21 +41,21 @@ public class apple
 	{
 		if(input >= 100)
 		{
-			int tempX1 = input % 100;
-			int tempX2 = input % 10;
-			
-			input = (tempX1*100) + (tempX2*10); 
+			System.out.println(input);
+			int temp = input / 10;
+			input = (temp*10); 
 		}
 		else if(input<=99)
 		{
-			int temp = input % 10;
-			
-			input = (temp*10); 
+			int temp3 = input / 10;
+			System.out.println(temp3);
+			input = (temp3*10); 
 		}
 		else
 		{
 			input = 10;
 		}
+		
 		return input;
 	}
 }
