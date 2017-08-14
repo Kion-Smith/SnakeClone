@@ -34,7 +34,6 @@ public class player
 		moveDown = false;
 		moveRight = false;
 		moveLeft = false;
-		System.out.println("true");
 	}
 	public void setDown()
 	{
@@ -79,7 +78,7 @@ public class player
 	public void update()
 	{
 		getNextPostion();
-		System.out.println(pPosX+""+pPosY);
+		//System.out.println(pPosX+""+pPosY);
 	}
 	public void draw(Graphics2D g)
 	{

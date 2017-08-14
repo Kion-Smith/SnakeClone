@@ -31,9 +31,31 @@ public class apple
 	{
 		aPosX  = (int)(Math.random()*801);
 		aPosY  = (int)(Math.random()*601);
-	}
-	public void isTouching()
-	{
 		
+		aPosX = convert(aPosX);
+		aPosY = convert(aPosY);
+		
+		System.out.println(aPosX+"  |  "+aPosY);
+	}
+	public int convert(int input)
+	{
+		if(input >= 100)
+		{
+			int tempX1 = input % 100;
+			int tempX2 = input % 10;
+			
+			input = (tempX1*100) + (tempX2*10); 
+		}
+		else if(input<=99)
+		{
+			int temp = input % 10;
+			
+			input = (temp*10); 
+		}
+		else
+		{
+			input = 10;
+		}
+		return input;
 	}
 }

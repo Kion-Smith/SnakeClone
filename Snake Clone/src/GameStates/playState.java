@@ -53,7 +53,6 @@ public class playState extends gameState
 		if(keyHandler.isPressed(keyHandler.UP)&&keyHandler.anyKeyDown() == true)
 		{
 			p.setUp();
-			System.out.println("true in play State");
 		}
 		if(keyHandler.isPressed(keyHandler.DOWN)&&keyHandler.anyKeyDown() == true)
 		{
