@@ -12,7 +12,6 @@ public class apple
 	public int aPosX =0;
 	public int aPosY =0;
 	
-	private int moveSpeed =10;
 	
 	public apple()
 	{

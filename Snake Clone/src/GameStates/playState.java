@@ -12,14 +12,13 @@ import Controllers.gameStateManager;
 import Controllers.keyHandler;
 import Entity.apple;
 import Entity.player;
-import LinkedList.location;
 
 public class playState extends gameState
 {
 	private player p;
 	private apple a;
 	
-	public String[][] map;
+	public  String[][] map;
 
 	public playState(gameStateManager gsm) 
 	{
@@ -33,9 +32,6 @@ public class playState extends gameState
 		a = new apple();
 		
 		map = new String[40][30];
-		
-		int x=0;
-		int y=0;
 		
 		for(int i = 0;i<40;i++)
 		{

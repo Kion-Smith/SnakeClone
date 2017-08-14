@@ -2,7 +2,6 @@ package Main;
 
 import javax.swing.JFrame;
 
-import LinkedList.Node;
 
 public class Game 
 {
@@ -19,7 +18,6 @@ public class Game
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		Node n = new Node(200,100);
 		
 	}
 }
