@@ -9,17 +9,14 @@ public class apple
 	private int pWidth = 20;
 	private int pHeight = 20;
 	
-	private int pPosX =0;
-	private int pPosY =0;
+	public int aPosX =0;
+	public int aPosY =0;
 	
 	private int moveSpeed =10;
 	
 	public apple()
 	{
-		pPosX  = (int)(Math.random()*801);
-		pPosY  = (int)(Math.random()*601);
-		
-	
+		nextPostion();
 	}
 	public void update()
 	{
@@ -28,7 +25,15 @@ public class apple
 	public void draw(Graphics2D g)
 	{
 		g.setColor(Color.RED);
-		g.fillRect(pPosX, pPosY, pWidth, pHeight);
+		g.fillRect(aPosX, aPosY, pWidth, pHeight);
 	}
-	
+	public void nextPostion()
+	{
+		aPosX  = (int)(Math.random()*801);
+		aPosY  = (int)(Math.random()*601);
+	}
+	public void isTouching()
+	{
+		
+	}
 }

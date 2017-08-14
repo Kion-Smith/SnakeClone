@@ -27,7 +27,8 @@ public class playState extends gameState
 
 	public void update() 
 	{
-		handleInput();	
+		handleInput();
+		collectApple();
 		p.update();
 		a.update();
 	}
@@ -65,6 +66,15 @@ public class playState extends gameState
 		if(keyHandler.isPressed(keyHandler.LEFT)&&keyHandler.anyKeyDown() == true)
 		{
 			p.setLeft();
+		}
+	}
+	
+	public void collectApple()
+	{
+		if(p.pPosX == a.aPosX && p.pPosY == a.aPosY)
+		{
+			a.nextPostion(); 
+			System.out.println("GOTTTTTTTTTEEEEEEM");
 		}
 	}
 	

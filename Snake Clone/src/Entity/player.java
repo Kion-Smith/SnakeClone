@@ -13,8 +13,8 @@ public class player
 	private int pWidth = 20;
 	private int pHeight = 20;
 	
-	private int pPosX =0;
-	private int pPosY =0;
+	public int pPosX =0;
+	public int pPosY =0;
 	
 	private int moveSpeed =10;
 	
