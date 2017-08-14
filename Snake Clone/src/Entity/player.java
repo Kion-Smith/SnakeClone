@@ -13,8 +13,8 @@ public class player
 	private int pWidth = 20;
 	private int pHeight = 20;
 	
-	public int pPosX =0;
-	public int pPosY =0;
+	private int pPosX =0;
+	private int pPosY =0;
 	
 	private int moveSpeed =10;
 	
@@ -23,6 +23,25 @@ public class player
 		pPosX  = x;
 		pPosY  = y;
 	}
+	
+	public int currentX()
+	{
+		return pPosX;
+	}
+	public int currentY()
+	{
+		return pPosY;
+	}
+	
+	public void setX(int prev)
+	{
+		
+	}
+	public void setY(int prev)
+	{
+		
+	}
+	
 	public void addToSnake()
 	{
 		
@@ -61,6 +80,7 @@ public class player
 		if(moveUp)
 		{
 			pPosY -=moveSpeed;
+			
 		}
 		if(moveDown)
 		{

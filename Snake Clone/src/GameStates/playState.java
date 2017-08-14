@@ -33,26 +33,18 @@ public class playState extends gameState
 		a = new apple();
 		
 		map = new String[40][30];
-		location temp = new location();
+		
 		int x=0;
 		int y=0;
 		
 		for(int i = 0;i<40;i++)
 		{
 			
-			x+=20;
-			y=0;
+			
 			for(int j=0;j<30;j++)
 			{
 				
-				y+=20;
-				if(i ==0 && j==0)
-				{
-					y=0;
-					x=0;
-				}
-				
-				map[i][j] = x+","+y;
+				map[i][j] = (i*20)+","+(j*20);
 				
 			}
 		}
@@ -83,7 +75,20 @@ public class playState extends gameState
 		{
 			for(int a=0;a<30;a++)
 			{
-				System.out.println(map[z][a]);
+				//System.out.println(map[z][a]);
+				String normal= map[z][a];
+				int tempx= Integer.parseInt(normal.substring(0, normal.indexOf(",") ) );
+				int tempy= Integer.parseInt(normal.substring(normal.indexOf(",")+1 ) );
+				if(a%2==0)
+				{
+					g.setColor(Color.darkGray);
+				}
+				else
+				{
+					g.setColor(Color.GRAY);
+				}
+				g.fillRect(tempx,tempy,20,20);
+				//System.out.println(tempx+" "+tempy);
 				
 			}
 		}
@@ -100,24 +105,34 @@ public class playState extends gameState
 		if(keyHandler.isPressed(keyHandler.UP)&&keyHandler.anyKeyDown() == true)
 		{
 			p.setUp();
+			p.currentX();
+			p.currentY();
 		}
 		if(keyHandler.isPressed(keyHandler.DOWN)&&keyHandler.anyKeyDown() == true)
 		{
 			p.setDown();
+			p.currentX();
+			p.currentY();
 		}
 		if(keyHandler.isPressed(keyHandler.RIGHT)&&keyHandler.anyKeyDown() == true)
 		{
 			p.setRight();
+			p.currentX();
+			p.currentY();
 		}
 		if(keyHandler.isPressed(keyHandler.LEFT)&&keyHandler.anyKeyDown() == true)
 		{
 			p.setLeft();
-		}
+			p.currentX();
+			p.currentY();
+			
+		}	
+		
 	}
 	
 	public void collectApple()
 	{
-		if(p.pPosX == a.aPosX && p.pPosY == a.aPosY)
+		if(p.currentX() == a.aPosX && p.currentY() == a.aPosY)
 		{
 			a.nextPostion(); 
 			System.out.println("GOTTTTTTTTTEEEEEEM");
