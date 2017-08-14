@@ -5,6 +5,11 @@ public class location
 	private int x;
 	private int y;
 	
+	public location()
+	{
+		
+	}
+	
 	public location(int tempx, int tempy)
 	{
 		x = tempx;
@@ -28,5 +33,9 @@ public class location
 	public int getY()
 	{
 		return y;
+	}
+	public String toString()
+	{
+		return x+" , "+y;
 	}
 }

@@ -6,16 +6,20 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
+import javax.xml.stream.Location;
 
 import Controllers.gameStateManager;
 import Controllers.keyHandler;
 import Entity.apple;
 import Entity.player;
+import LinkedList.location;
 
 public class playState extends gameState
 {
 	private player p;
 	private apple a;
+	
+	public String[][] map;
 
 	public playState(gameStateManager gsm) 
 	{
@@ -27,6 +31,31 @@ public class playState extends gameState
 	{
 		p = new player(0,0);
 		a = new apple();
+		
+		map = new String[40][30];
+		location temp = new location();
+		int x=0;
+		int y=0;
+		
+		for(int i = 0;i<40;i++)
+		{
+			
+			x+=20;
+			y=0;
+			for(int j=0;j<30;j++)
+			{
+				
+				y+=20;
+				if(i ==0 && j==0)
+				{
+					y=0;
+					x=0;
+				}
+				
+				map[i][j] = x+","+y;
+				
+			}
+		}
 	}
 
 	public void update() 
@@ -44,10 +73,20 @@ public class playState extends gameState
 		g.setColor(Color.white);
 		g.drawString("This is the play state",400,300);
 		
+		/*
 		ImageIcon i = new ImageIcon("C:\\Users\\NeonKion\\Downloads\\grid.png");
 		Image image=i.getImage();
 		g.drawImage(image,0,0,null);
+		*/
 		
+		for(int z = 0;z<40;z++)
+		{
+			for(int a=0;a<30;a++)
+			{
+				System.out.println(map[z][a]);
+				
+			}
+		}
 		p.draw(g);
 		a.draw(g);
 	}

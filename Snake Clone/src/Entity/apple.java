@@ -6,8 +6,8 @@ import java.awt.Graphics2D;
 public class apple 
 {
 	
-	private int pWidth = 50;
-	private int pHeight = 50;
+	private int pWidth = 20;
+	private int pHeight = 20;
 	
 	public int aPosX =0;
 	public int aPosY =0;
