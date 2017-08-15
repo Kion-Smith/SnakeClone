@@ -29,7 +29,7 @@ public class playState extends gameState
 	public void init() 
 	{
 		p = new player(0,0);
-		a = new apple();
+		
 		
 		map = new String[40][30];
 		
@@ -44,6 +44,7 @@ public class playState extends gameState
 				
 			}
 		}
+		a = new apple(map);
 	}
 
 	public void update() 
@@ -51,7 +52,6 @@ public class playState extends gameState
 		handleInput();
 		collectApple();
 		p.update();
-		a.update();
 	}
 
 	public void draw(Graphics2D g) 
@@ -130,7 +130,7 @@ public class playState extends gameState
 	{
 		if(p.currentX() == a.aPosX && p.currentY() == a.aPosY)
 		{
-			a.nextPostion(); 
+			a.nextPostion(map); 
 			System.out.println("GOTTTTTTTTTEEEEEEM");
 		}
 	}

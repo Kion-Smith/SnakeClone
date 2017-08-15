@@ -16,7 +16,7 @@ public class player
 	private int pPosX =0;
 	private int pPosY =0;
 	
-	private int moveSpeed =20;
+	private int moveSpeed = 20;
 	
 	public player(int x,int y)
 	{
@@ -100,7 +100,7 @@ public class player
 	}
 	public void draw(Graphics2D g)
 	{
-		g.setColor(Color.YELLOW);
+		g.setColor(Color.GREEN);
 		g.fillRect(pPosX, pPosY, pWidth, pHeight);
 	}
 }

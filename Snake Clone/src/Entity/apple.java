@@ -13,9 +13,9 @@ public class apple
 	public int aPosY =0;
 	
 	
-	public apple()
+	public apple(String[][] m)
 	{
-		nextPostion();
+		nextPostion(m);
 	}
 	public void update()
 	{
@@ -26,35 +26,21 @@ public class apple
 		g.setColor(Color.RED);
 		g.fillRect(aPosX, aPosY, pWidth, pHeight);
 	}
-	public void nextPostion()
+	public void nextPostion(String[][] m)
 	{
-		aPosX  = (int)(Math.random()*801);
-		aPosY  = (int)(Math.random()*601);
+		 int x = (int)(Math.random()*40);
+		 int y = (int)(Math.random()*30);
+		 System.out.println("This is rand x: "+x+" | This is rand y:"+y);
+		//aPosX = convert(aPosX);
+		//aPosY = convert(aPosY);
 		
-		aPosX = convert(aPosX);
-		aPosY = convert(aPosY);
+		//System.out.println(aPosX+"  |  "+aPosY);
+		 
+		 aPosX = Integer.parseInt(m[x][y].substring(0, m[x][y].indexOf(",") ) ); 
+		 aPosY= Integer.parseInt(m[x][y].substring(m[x][y].indexOf(",")+1 ) );
+		 
 		
-		System.out.println(aPosX+"  |  "+aPosY);
+		 System.out.println("This is aPosX: "+aPosX+" | This is aPosY:"+aPosY);
 	}
-	public int convert(int input)
-	{
-		if(input >= 100)
-		{
-			System.out.println(input);
-			int temp = input / 10;
-			input = (temp*10); 
-		}
-		else if(input<=99)
-		{
-			int temp3 = input / 10;
-			System.out.println(temp3);
-			input = (temp3*10); 
-		}
-		else
-		{
-			input = 10;
-		}
-		
-		return input;
-	}
+	
 }
