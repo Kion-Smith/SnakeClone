@@ -51,6 +51,7 @@ public class playState extends gameState
 	{
 		handleInput();
 		collectApple();
+		onScreen();
 		p.update();
 	}
 
@@ -132,6 +133,13 @@ public class playState extends gameState
 		{
 			a.nextPostion(map); 
 			System.out.println("GOTTTTTTTTTEEEEEEM");
+		}
+	}
+	public void onScreen()
+	{
+		if(p.currentX() >= 800|| p.currentY() >= 600 ||p.currentY() <= -1||p.currentX() <= -1)
+		{
+			gsm.setState(gameStateManager.GAMEOVER);
 		}
 	}
 	
