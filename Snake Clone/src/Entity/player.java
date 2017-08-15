@@ -2,6 +2,7 @@ package Entity;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.util.ArrayList;
 
 public class player 
 {
@@ -16,12 +17,16 @@ public class player
 	private int pPosX =0;
 	private int pPosY =0;
 	
+	private ArrayList<String> snakeLength;
+	
 	private int moveSpeed = 20;
 	
 	public player(int x,int y)
 	{
 		pPosX  = x;
 		pPosY  = y;
+		snakeLength = new ArrayList<String>();
+		snakeLength.add(x+","+y);
 	}
 	
 	public int currentX()
@@ -42,11 +47,10 @@ public class player
 		
 	}
 	
-	public void addToSnake()
+	public void addToSnake(int x, int y)
 	{
-		
+		snakeLength.add(x+","+y);
 	}
-	
 	public void setUp()
 	{
 		moveUp = true;

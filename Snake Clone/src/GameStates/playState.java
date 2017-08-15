@@ -131,7 +131,8 @@ public class playState extends gameState
 	{
 		if(p.currentX() == a.aPosX && p.currentY() == a.aPosY)
 		{
-			a.nextPostion(map); 
+			a.nextPostion(map);
+			p.addToSnake(p.currentX()-20,p.currentY()-20);
 			System.out.println("GOTTTTTTTTTEEEEEEM");
 		}
 	}
