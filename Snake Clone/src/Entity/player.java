@@ -11,6 +11,8 @@ public class player
 	protected boolean moveRight;
 	protected boolean moveLeft;
 	
+	
+	
 	private int pWidth = 20;
 	private int pHeight = 20;
 	
@@ -48,6 +50,7 @@ public class player
 		moveDown = false;
 		moveRight = false;
 		moveLeft = false;
+		
 	}
 	public void setDown()
 	{
@@ -76,7 +79,6 @@ public class player
 		if(moveUp)
 		{
 			
-			
 			for(int i =0;i<snakeLength.size();i++)
 			{
 				
@@ -98,7 +100,7 @@ public class player
 		}
 		if(moveDown)
 		{
-			
+
 			for(int i =0;i<snakeLength.size();i++)
 			{
 				
@@ -175,18 +177,34 @@ public class player
 		}
 	}
 	
-	public void eatingSelf()
+	public boolean eatingSelf()
 	{
+		int lastX=0;
+		int lastY=0;
 		for(int i =0;i<snakeLength.size();i++)
 		{
 			if(i==0)		
 			{
-				
+				lastX = snakeLength.get(i).getX();
+				lastY = snakeLength.get(i).getY();
 			}
 			else
 			{
-				
+				for(int j =1;j<snakeLength.size();j++)
+				{
+					if(lastX == snakeLength.get(j).getX() && lastY == snakeLength.get(j).getY() )
+					{
+						return true;
+					}
+					else
+					{
+						lastX = snakeLength.get(j).getX();
+						lastY = snakeLength.get(j).getY();
+					}
+				}
 			}
 		}
+		
+		return false;
 	}
 }

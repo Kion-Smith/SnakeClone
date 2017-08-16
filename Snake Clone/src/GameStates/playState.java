@@ -48,11 +48,15 @@ public class playState extends gameState
 	}
 
 	public void update() 
-	{
+	{	
+		checkSnake();
 		handleInput();
 		collectApple();
 		onScreen();
+		
 		p.update();
+		
+		
 	}
 
 	public void draw(Graphics2D g) 
@@ -99,7 +103,8 @@ public class playState extends gameState
 		{
 			gsm.setPaused(true);
 		}
-		
+		boolean prevUp;
+		boolean preDown;
 		if(keyHandler.isPressed(keyHandler.UP)&& keyHandler.anyKeyDown() == true )
 		{
 			p.setUp();
@@ -127,13 +132,20 @@ public class playState extends gameState
 		if(p.currentX() == a.aPosX && p.currentY() == a.aPosY)
 		{
 			a.nextPostion(map);
-			p.addToSnake(p.currentX()-20,p.currentY()-20);
+			p.addToSnake(p.currentX(),p.currentY());
 			System.out.println("GOTTTTTTTTTEEEEEEM");
 		}
 	}
 	public void onScreen()
 	{
 		if(p.currentX() >= 800|| p.currentY() >= 600 ||p.currentY() <= -1||p.currentX() <= -1)
+		{
+			gsm.setState(gameStateManager.GAMEOVER);
+		}
+	}
+	public void checkSnake()
+	{
+		if(p.eatingSelf() == true)
 		{
 			gsm.setState(gameStateManager.GAMEOVER);
 		}

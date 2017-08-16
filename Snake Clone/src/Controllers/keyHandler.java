@@ -29,11 +29,11 @@ public class keyHandler
 			{
 				keyState[DOWN] = b;
 			}
-			else if(i == KeyEvent.VK_LEFT)
+			else if(i == KeyEvent.VK_LEFT )
 			{
 				keyState[LEFT] = b;
 			}
-			else if(i == KeyEvent.VK_RIGHT)
+			else if(i == KeyEvent.VK_RIGHT )
 			{
 				keyState[RIGHT] = b;
 			}
@@ -57,21 +57,23 @@ public class keyHandler
 		}
 		public static boolean isPressed(int i) 
 		{
-			return keyState[i] && !prevKeyState[i];
+		//	return keyState[i] && !prevKeyState[i];
+			if(keyState[i] && !prevKeyState[i])
+			{
+				return true;
+			}
+			return false;
 		}
 		public static boolean anyKeyDown() 
 		{
 			for(int i = 0; i < keys; i++)
 			{
 				if(keyState[i]) 
+				{
 					return true;
+				}
 			}
 			return false;
-		}
-		
-		public static boolean isDown(int i)
-		{
-			return keyState[i];
 		}
 
 }
