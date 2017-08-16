@@ -61,11 +61,14 @@ public class keyHandler
 		}
 		public static boolean anyKeyDown() 
 		{
-			for(int i = 0; i < keys; i++) {
-				if(keyState[i]) return true;
+			for(int i = 0; i < keys; i++)
+			{
+				if(keyState[i]) 
+					return true;
 			}
 			return false;
 		}
+		
 		public static boolean isDown(int i)
 		{
 			return keyState[i];

@@ -18,12 +18,5 @@ public class snake
 	{
 		return y;
 	}
-	public void setX()
-	{
-		
-	}
-	public void setY()
-	{
-		
-	}
+	
 }

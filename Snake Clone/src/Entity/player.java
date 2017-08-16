@@ -38,15 +38,6 @@ public class player
 		return pPosY;
 	}
 	
-	public void setX(int prev)
-	{
-		
-	}
-	public void setY(int prev)
-	{
-		
-	}
-	
 	public void addToSnake(int x, int y)
 	{
 		snakeLength.add(new snake(x,y) );
@@ -181,6 +172,21 @@ public class player
 		{
 			
 			g.fillRect(snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight);
+		}
+	}
+	
+	public void eatingSelf()
+	{
+		for(int i =0;i<snakeLength.size();i++)
+		{
+			if(i==0)		
+			{
+				
+			}
+			else
+			{
+				
+			}
 		}
 	}
 }

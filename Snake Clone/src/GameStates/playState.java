@@ -99,30 +99,25 @@ public class playState extends gameState
 		{
 			gsm.setPaused(true);
 		}
-		if(keyHandler.isPressed(keyHandler.UP)&&keyHandler.anyKeyDown() == true)
+		
+		if(keyHandler.isPressed(keyHandler.UP)&& keyHandler.anyKeyDown() == true )
 		{
 			p.setUp();
-			p.currentX();
-			p.currentY();
+			
 		}
-		if(keyHandler.isPressed(keyHandler.DOWN)&&keyHandler.anyKeyDown() == true)
+		if(keyHandler.isPressed(keyHandler.DOWN)&&keyHandler.anyKeyDown() == true )
 		{
 			p.setDown();
-			p.currentX();
-			p.currentY();
+			
 		}
-		if(keyHandler.isPressed(keyHandler.RIGHT)&&keyHandler.anyKeyDown() == true)
+		if(keyHandler.isPressed(keyHandler.RIGHT)&&keyHandler.anyKeyDown() == true )
 		{
 			p.setRight();
-			p.currentX();
-			p.currentY();
+		
 		}
-		if(keyHandler.isPressed(keyHandler.LEFT)&&keyHandler.anyKeyDown() == true)
+		if(keyHandler.isPressed(keyHandler.LEFT)&&keyHandler.anyKeyDown() == true )
 		{
 			p.setLeft();
-			p.currentX();
-			p.currentY();
-			
 		}	
 		
 	}
