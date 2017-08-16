@@ -103,24 +103,40 @@ public class playState extends gameState
 		{
 			gsm.setPaused(true);
 		}
-		boolean prevUp;
-		boolean preDown;
-		if(keyHandler.isPressed(keyHandler.UP)&& keyHandler.anyKeyDown() == true )
+		
+		if(keyHandler.prevKeyState[keyHandler.DOWN]!= true )
+		{
+			
+		}
+		if(keyHandler.prevKeyState[keyHandler.UP]!= true )
+		{
+			
+		}
+		if( keyHandler.prevKeyState[keyHandler.LEFT]!= true )
+		{
+
+		}
+		if(keyHandler.prevKeyState[keyHandler.RIGHT]!= true)
+		{
+		
+		}
+		
+		if(keyHandler.isPressed(keyHandler.UP)&& keyHandler.anyKeyDown() == true && keyHandler.prevKeyState[keyHandler.DOWN]!= true )
 		{
 			p.setUp();
 			
 		}
-		if(keyHandler.isPressed(keyHandler.DOWN)&&keyHandler.anyKeyDown() == true )
+		if(keyHandler.isPressed(keyHandler.DOWN)&&keyHandler.anyKeyDown() == true&& keyHandler.prevKeyState[keyHandler.UP]!= true )
 		{
 			p.setDown();
 			
 		}
-		if(keyHandler.isPressed(keyHandler.RIGHT)&&keyHandler.anyKeyDown() == true )
+		if(keyHandler.isPressed(keyHandler.RIGHT)&&keyHandler.anyKeyDown() == true && keyHandler.prevKeyState[keyHandler.LEFT]!= true )
 		{
 			p.setRight();
 		
 		}
-		if(keyHandler.isPressed(keyHandler.LEFT)&&keyHandler.anyKeyDown() == true )
+		if(keyHandler.isPressed(keyHandler.LEFT)&&keyHandler.anyKeyDown() == true && keyHandler.prevKeyState[keyHandler.RIGHT]!= true)
 		{
 			p.setLeft();
 		}	
