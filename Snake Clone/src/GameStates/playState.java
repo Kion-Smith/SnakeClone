@@ -49,13 +49,13 @@ public class playState extends gameState
 
 	public void update() 
 	{	
-		checkSnake();
+		
 		handleInput();
 		collectApple();
 		onScreen();
 		
 		p.update();
-		
+		checkSnake();
 		
 	}
 
@@ -93,45 +93,58 @@ public class playState extends gameState
 
 	public void handleInput() 
 	{
+		String prev ="";
+		
 		if(keyHandler.isPressed(keyHandler.ESC))
 		{
 			gsm.setPaused(true);
 		}
 		
+		
 		if(keyHandler.prevKeyState[keyHandler.DOWN]!= true )
 		{
-			
 		}
 		if(keyHandler.prevKeyState[keyHandler.UP]!= true )
 		{
-			
 		}
 		if( keyHandler.prevKeyState[keyHandler.LEFT]!= true )
 		{
-
 		}
 		if(keyHandler.prevKeyState[keyHandler.RIGHT]!= true)
 		{
-		
+
 		}
 		
-		if(keyHandler.isPressed(keyHandler.UP)&& keyHandler.anyKeyDown() == true && keyHandler.prevKeyState[keyHandler.DOWN]!= true )
+		if(keyHandler.isPressed(keyHandler.UP)&& keyHandler.anyKeyDown() == true && !(p.getDirectionDown() ))
 		{
+			
+			p.setDirectionUp(true);
+			p.setDirectionLeft(false);
+			p.setDirectionRight(false);
 			p.setUp();
 			
 		}
-		if(keyHandler.isPressed(keyHandler.DOWN)&&keyHandler.anyKeyDown() == true&& keyHandler.prevKeyState[keyHandler.UP]!= true )
-		{
+		if(keyHandler.isPressed(keyHandler.DOWN)&&keyHandler.anyKeyDown() == true && !(p.getDirectionUp() ))
+		{	
+			p.setDirectionDown(true);
+			p.setDirectionLeft(false);
+			p.setDirectionRight(false);
 			p.setDown();
 			
 		}
-		if(keyHandler.isPressed(keyHandler.RIGHT)&&keyHandler.anyKeyDown() == true && keyHandler.prevKeyState[keyHandler.LEFT]!= true )
+		if(keyHandler.isPressed(keyHandler.RIGHT)&&keyHandler.anyKeyDown() == true && !(p.getDirectionLeft() ))
 		{
+			p.setDirectionRight(true);
+			p.setDirectionUp(false);
+			p.setDirectionDown(false);
 			p.setRight();
 		
 		}
-		if(keyHandler.isPressed(keyHandler.LEFT)&&keyHandler.anyKeyDown() == true && keyHandler.prevKeyState[keyHandler.RIGHT]!= true)
+		if(keyHandler.isPressed(keyHandler.LEFT)&&keyHandler.anyKeyDown() == true && !(p.getDirectionRight() ))
 		{
+			p.setDirectionLeft(true);
+			p.setDirectionUp(false);
+			p.setDirectionDown(false);
 			p.setLeft();
 		}	
 		

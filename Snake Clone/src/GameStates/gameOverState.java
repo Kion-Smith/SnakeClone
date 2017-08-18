@@ -35,7 +35,7 @@ public class gameOverState extends gameState
 		
 		g.setColor(Color.white);
 		g.drawString("This is the game over screen",330,50);
-		g.drawString("The lenght of the snake was "+Score,330,100);
+		g.drawString("The lenght of the snake was "+(Score),330,100);
 		g.drawString("Game Over gg",330,200);
 		
 		g.setColor(Color.BLUE);

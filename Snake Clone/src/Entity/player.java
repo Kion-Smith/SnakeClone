@@ -11,6 +11,10 @@ public class player
 	protected boolean moveRight;
 	protected boolean moveLeft;
 	
+	private boolean directionUp;
+	private boolean directionDown;
+	private boolean directionRight;
+	private boolean directionLeft;
 	
 	
 	private int pWidth = 20;
@@ -81,6 +85,7 @@ public class player
 	public void getNextPostion()
 	{
 		snake last = new snake(0,0);
+		
 		if(moveUp)
 		{
 			
@@ -224,8 +229,43 @@ public class player
 		
 		return false;
 	}
+	
 	public int snakeSize()
 	{
 		return snakeLength.size();
+	}
+	
+	public void setDirectionUp(boolean b)
+	{
+		directionUp = b;
+	}
+	public void setDirectionDown(boolean b)
+	{
+		directionDown = b;
+	}
+	public void setDirectionLeft(boolean b)
+	{
+		directionLeft = b;
+	}
+	public void setDirectionRight(boolean b)
+	{
+		directionRight = b;
+	}
+	
+	public boolean getDirectionUp()
+	{
+		return directionUp;
+	}
+	public boolean getDirectionDown()
+	{
+		return directionDown;
+	}
+	public boolean getDirectionLeft()
+	{
+		return directionLeft;
+	}
+	public boolean getDirectionRight()
+	{
+		return directionRight;
 	}
 }
