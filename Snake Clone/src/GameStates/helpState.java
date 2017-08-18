@@ -1,6 +1,7 @@
 package GameStates;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 
 import Controllers.gameStateManager;
@@ -30,13 +31,16 @@ public class helpState extends gameState
 		g.fillRect(0,0,800,600);
 		
 		g.setColor(Color.white);
-		g.drawString("This is the help state",330,50);
 		
-		g.drawString("SOME INSTRUCTIONS",330,200);
-		
+		g.setFont(new Font("Arial",Font.PLAIN,32) );
+		g.drawString("HELP",345,50);
+		g.drawString("- Use the arrow keys to move up, down, right, and left",0,150);
+		g.drawString("- Any time in game you can pause by pressing 'Escape' ",0,200);
+		g.drawString("- Contact me to let me know how I can make this better",0,250);
+		g.drawString("Email:: kion_smith@hotmail.com",150,300);
 		g.setColor(Color.BLUE);
-		g.fillRect(330, 290,10,10);
-		g.drawString("back", 370, 300);
+		g.fillRect(330, 380,20,20);
+		g.drawString("back", 370, 400);
 		
 	}
 

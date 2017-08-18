@@ -1,6 +1,7 @@
 package GameStates;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 
 import Controllers.gameStateManager;
@@ -40,9 +41,15 @@ public class menuState extends gameState
 		g.setColor(Color.RED);
 		g.fillRect(0, 0, 800, 600);
 		
-		
-		
 		g.setColor(Color.BLACK);
+		
+		g.setFont(new Font("Arial",Font.PLAIN,48));
+		g.drawString("SNAKE", 320, 100);
+		g.setFont(new Font("Arial",Font.PLAIN,18));
+		g.drawString("by Kion Smith", 350, 150);
+		
+		g.setFont(new Font("Arial",Font.PLAIN,24));
+		
 		g.drawString(options[0], 370, 300);
 		g.drawString(options[1], 370, 350);
 		g.drawString(options[2], 370, 400);
@@ -50,17 +57,20 @@ public class menuState extends gameState
 		if(cur == 0)
 		{
 			g.setColor(Color.BLUE);
-			g.fillRect(330, 290,10,10);
+			g.drawString(options[0], 370, 300);
+			g.fillRect(330, 285,15,15);
 		}
 		else if(cur == 1)
 		{
 			g.setColor(Color.BLUE);
-			g.fillRect(330, 340,10,10);
+			g.drawString(options[1], 370, 350);
+			g.fillRect(330, 330,15,15);
 		}
 		else if(cur == 2)
 		{
 			g.setColor(Color.BLUE);
-			g.fillRect(330, 390,10,10);
+			g.drawString(options[2], 370, 400);
+			g.fillRect(330, 380,15,15);
 		}
 		
 		
