@@ -31,6 +31,11 @@ public class player
 		snakeLength.add(new snake(x,y));
 	}
 	
+	public player() 
+	{
+		
+	}
+
 	public int currentX()
 	{
 		return pPosX;
@@ -172,9 +177,21 @@ public class player
 		
 		for(int i =0;i<snakeLength.size();i++)
 		{
+			if(i%2 ==1)
+			{
+				g.setColor(Color.GREEN);
+			}
+			else
+			{
+				g.setColor(Color.green);
+			}
 			
 			g.fillRect(snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight);
 		}
+		
+		g.setColor(Color.BLACK);
+		g.drawString("The current Lenght of the snake is "+snakeLength.size(),550, 590);
+		
 	}
 	
 	public boolean eatingSelf()
@@ -206,5 +223,9 @@ public class player
 		}
 		
 		return false;
+	}
+	public int snakeSize()
+	{
+		return snakeLength.size();
 	}
 }

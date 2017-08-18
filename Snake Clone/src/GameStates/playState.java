@@ -156,6 +156,7 @@ public class playState extends gameState
 	{
 		if(p.currentX() >= 800|| p.currentY() >= 600 ||p.currentY() <= -1||p.currentX() <= -1)
 		{
+			gameOverState.Score = p.snakeSize();
 			gsm.setState(gameStateManager.GAMEOVER);
 		}
 	}
@@ -163,6 +164,7 @@ public class playState extends gameState
 	{
 		if(p.eatingSelf() == true)
 		{
+			gameOverState.Score = p.snakeSize();
 			gsm.setState(gameStateManager.GAMEOVER);
 		}
 	}
