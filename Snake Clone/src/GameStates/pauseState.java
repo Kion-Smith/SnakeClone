@@ -3,6 +3,9 @@ package GameStates;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import Controllers.gameStateManager;
 import Controllers.keyHandler;
 
@@ -20,7 +23,8 @@ public class pauseState extends gameState
 
 	public void draw(Graphics2D g) 
 	{
-		g.setColor(Color.GREEN);
+		Color c = new Color(102, 102, 102,15);
+		g.setColor(c);
 		g.fillRect(0,0,800,600);
 		
 		

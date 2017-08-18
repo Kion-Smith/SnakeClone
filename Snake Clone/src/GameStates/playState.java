@@ -80,14 +80,8 @@ public class playState extends gameState
 				String normal= map[z][a];
 				int tempx= Integer.parseInt(normal.substring(0, normal.indexOf(",") ) );
 				int tempy= Integer.parseInt(normal.substring(normal.indexOf(",")+1 ) );
-				if(a%2==0)
-				{
-					g.setColor(Color.darkGray);
-				}
-				else
-				{
-					g.setColor(Color.GRAY);
-				}
+				Color c = new Color(102, 60, 0);
+				g.setColor(c);
 				g.fillRect(tempx,tempy,20,20);
 				//System.out.println(tempx+" "+tempy);
 				
@@ -149,7 +143,6 @@ public class playState extends gameState
 		{
 			a.nextPostion(map);
 			p.addToSnake(p.currentX(),p.currentY());
-			System.out.println("GOTTTTTTTTTEEEEEEM");
 		}
 	}
 	public void onScreen()
