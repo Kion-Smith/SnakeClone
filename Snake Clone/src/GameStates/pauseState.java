@@ -111,6 +111,7 @@ public class pauseState extends gameState
 		}
 		else if(cur == 1)
 		{
+			gsm.setPaused(false);
 			gsm.setState(gameStateManager.MENU);
 		}
 		else if(cur ==2)

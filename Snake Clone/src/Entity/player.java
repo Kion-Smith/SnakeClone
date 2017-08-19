@@ -1,6 +1,7 @@
 package Entity;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
@@ -195,7 +196,8 @@ public class player
 		}
 		
 		g.setColor(Color.BLACK);
-		g.drawString("The current Lenght of the snake is "+snakeLength.size(),550, 590);
+		g.setFont(new Font("Arial",Font.BOLD,24));
+		g.drawString("Snake Length "+snakeLength.size(),550, 590);
 		
 	}
 	
