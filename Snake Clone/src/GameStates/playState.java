@@ -1,6 +1,7 @@
 package GameStates;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -19,18 +20,18 @@ public class playState extends gameState
 	private apple a;
 	
 	public  String[][] map;
+	public long startTime;
+	public long curTime;
 
 	public playState(gameStateManager gsm) 
 	{
 		super(gsm);
-		
 	}
 
 	public void init() 
 	{
 		p = new player(0,0);
-		
-		
+		startTime = System.nanoTime();
 		map = new String[40][30];
 		
 		for(int i = 0;i<40;i++)
@@ -49,7 +50,7 @@ public class playState extends gameState
 
 	public void update() 
 	{	
-		
+		curTime = System.nanoTime() - startTime;
 		handleInput();
 		collectApple();
 		onScreen();
@@ -64,14 +65,12 @@ public class playState extends gameState
 		
 		g.setColor(new Color(102, 60, 0));
 		g.fillRect(0,0,800,600);
-		
-		/*
-		ImageIcon i = new ImageIcon("C:\\Users\\NeonKion\\Downloads\\grid.png");
-		Image image=i.getImage();
-		g.drawImage(image,0,0,null);
-		*/
+		g.setColor(Color.BLACK);
+		g.setFont(new Font("Arial",Font.PLAIN,24));
+		g.drawString("Current Time "+ curTime/100000000,300,590);
 		p.draw(g);
 		a.draw(g);
+		
 	}
 
 	public void handleInput() 
@@ -144,6 +143,7 @@ public class playState extends gameState
 		if(p.currentX() >= 800|| p.currentY() >= 600 ||p.currentY() <= -1||p.currentX() <= -1)
 		{
 			gameOverState.Score = p.snakeSize();
+			gameOverState.time = curTime/100000000;
 			gsm.setState(gameStateManager.GAMEOVER);
 		}
 	}
@@ -152,6 +152,7 @@ public class playState extends gameState
 		if(p.eatingSelf() == true)
 		{
 			gameOverState.Score = p.snakeSize();
+			gameOverState.time = curTime/100000000;
 			gsm.setState(gameStateManager.GAMEOVER);
 		}
 	}

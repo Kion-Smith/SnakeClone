@@ -12,6 +12,7 @@ public class gameOverState extends gameState
 {
 	private int cur =0;
 	public static int Score =0;
+	public static long time;
 	
 	public gameOverState(gameStateManager gsm) 
 	{
@@ -39,7 +40,7 @@ public class gameOverState extends gameState
 		g.setFont(new Font("Arial",Font.PLAIN, 24));
 		g.drawString("GAME OVER",330,50);
 		g.drawString("The length of your snake was "+(Score),250,100);
-		g.drawString("SCORE "+(Score*100),250,150);
+		g.drawString("SCORE "+(int)((Score*100)*(time*.05)),250,150);
 		
 		
 		g.drawString("Restart", 370, 250);
