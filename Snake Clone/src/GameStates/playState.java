@@ -50,12 +50,14 @@ public class playState extends gameState
 
 	public void update() 
 	{	
+		
 		curTime = System.nanoTime() - startTime;
 		handleInput();
 		collectApple();
+		p.update();
 		onScreen();
 		checkSnake();
-		p.update();
+		
 		
 		
 	}
@@ -68,6 +70,7 @@ public class playState extends gameState
 		g.setColor(Color.BLACK);
 		p.draw(g);
 		a.draw(g);
+		g.setColor(Color.BLACK);
 		g.setFont(new Font("Arial",Font.PLAIN,24));
 		g.drawString("Current Time "+ curTime/100000000,300,590);
 	}

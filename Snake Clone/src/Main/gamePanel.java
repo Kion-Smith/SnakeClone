@@ -14,6 +14,7 @@ import Controllers.keyHandler;
 
 
 
+@SuppressWarnings("serial")
 public class gamePanel extends JPanel implements Runnable, KeyListener
 {
 	public static final int WIDTH = 800;
@@ -21,7 +22,7 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 	
 	private Thread thread;
 	private boolean running;
-	private final int FPS = 20;//20  or 15 unsure??
+	private final int FPS = 15;//20  or 15 unsure??
 	private final int targetTime = 1000 / FPS;
 	
 	private BufferedImage image;
