@@ -66,11 +66,10 @@ public class playState extends gameState
 		g.setColor(new Color(102, 60, 0));
 		g.fillRect(0,0,800,600);
 		g.setColor(Color.BLACK);
-		g.setFont(new Font("Arial",Font.PLAIN,24));
-		g.drawString("Current Time "+ curTime/100000000,300,590);
 		p.draw(g);
 		a.draw(g);
-		
+		g.setFont(new Font("Arial",Font.PLAIN,24));
+		g.drawString("Current Time "+ curTime/100000000,300,590);
 	}
 
 	public void handleInput() 
@@ -143,7 +142,7 @@ public class playState extends gameState
 		if(p.currentX() >= 800|| p.currentY() >= 600 ||p.currentY() <= -1||p.currentX() <= -1)
 		{
 			gameOverState.Score = p.snakeSize();
-			gameOverState.time = curTime/100000000;
+			gameOverState.time = curTime/1000000000;
 			gsm.setState(gameStateManager.GAMEOVER);
 		}
 	}
@@ -152,7 +151,7 @@ public class playState extends gameState
 		if(p.eatingSelf() == true)
 		{
 			gameOverState.Score = p.snakeSize();
-			gameOverState.time = curTime/100000000;
+			gameOverState.time = curTime/1000000000;
 			gsm.setState(gameStateManager.GAMEOVER);
 		}
 	}
