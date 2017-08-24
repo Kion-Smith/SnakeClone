@@ -54,11 +54,10 @@ public class playState extends gameState
 		curTime = System.nanoTime() - startTime;
 		handleInput();
 		collectApple();
-		p.update();
 		onScreen();
+		
+		p.update();
 		checkSnake();
-		
-		
 		
 	}
 

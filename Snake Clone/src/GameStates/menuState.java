@@ -70,7 +70,7 @@ public class menuState extends gameState
 		{
 			g.setColor(Color.BLUE);
 			g.drawString(options[2], 370, 400);
-			g.fillRect(330, 380,15,15);
+			g.fillRect(330, 385,15,15);
 		}
 		
 		

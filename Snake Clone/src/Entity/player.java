@@ -5,6 +5,9 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
+import Controllers.gameStateManager;
+import GameStates.playState;
+
 public class player 
 {
 	protected boolean moveUp;
@@ -36,11 +39,6 @@ public class player
 		snakeLength.add(new snake(x,y));
 	}
 	
-	public player() 
-	{
-		
-	}
-
 	public int currentX()
 	{
 		return pPosX;
@@ -174,29 +172,29 @@ public class player
 	}
 	public void update()
 	{
+		eatingSelf();
 		getNextPostion();
 	}
 	public void draw(Graphics2D g)
 	{
 		g.setColor(Color.GREEN);
-		//g.fillRect(pPosX, pPosY, pWidth, pHeight);
 		
 		for(int i =0;i<snakeLength.size();i++)
 		{
 			if(i%2 ==1)
 			{
-				g.setColor(Color.GREEN);
+				g.setColor(Color.YELLOW);
 			}
 			else
 			{
-				g.setColor(Color.green);
+				g.setColor(Color.GREEN);
 			}
 			
 			g.fillRect(snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight);
 		}
 		
 		g.setColor(Color.BLACK);
-		g.setFont(new Font("Arial",Font.BOLD,24));
+		g.setFont(new Font("Arial",Font.PLAIN,24));
 		g.drawString("Snake Length "+snakeLength.size(),550, 590);
 		
 	}
@@ -218,7 +216,9 @@ public class player
 				{
 					if(lastX == snakeLength.get(j).getX() && lastY == snakeLength.get(j).getY() )
 					{
+						System.out.println("Is eating");
 						return true;
+						
 					}
 					else
 					{
