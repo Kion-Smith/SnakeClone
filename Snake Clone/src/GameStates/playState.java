@@ -52,12 +52,13 @@ public class playState extends gameState
 	{	
 		
 		curTime = System.nanoTime() - startTime;
+		checkSnake();
 		handleInput();
 		collectApple();
 		onScreen();
 		
 		p.update();
-		checkSnake();
+		
 		
 	}
 
@@ -136,7 +137,7 @@ public class playState extends gameState
 		if(p.currentX() == a.aPosX && p.currentY() == a.aPosY)
 		{
 			a.nextPostion(map);
-			p.addToSnake(p.currentX()-20,p.currentY()-20);
+			p.addToSnake(p.currentX(),p.currentY());
 		}
 	}
 	public void onScreen()

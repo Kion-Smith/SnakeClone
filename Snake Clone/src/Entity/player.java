@@ -84,7 +84,7 @@ public class player
 	public void getNextPostion()
 	{
 		snake last = new snake(0,0);
-		
+	
 		if(moveUp)
 		{
 			
@@ -201,31 +201,11 @@ public class player
 	
 	public boolean eatingSelf()
 	{
-		int lastX=0;
-		int lastY=0;
-		for(int i =0;i<snakeLength.size();i++)
+		for(int i=1;i<snakeLength.size();i++)
 		{
-			if(i==0)		
+			if(pPosX == snakeLength.get(i).getX() && pPosY == snakeLength.get(i).getY())
 			{
-				lastX = snakeLength.get(i).getX();
-				lastY = snakeLength.get(i).getY();
-			}
-			else
-			{
-				for(int j =1;j<snakeLength.size();j++)
-				{
-					if(lastX == snakeLength.get(j).getX() && lastY == snakeLength.get(j).getY() )
-					{
-						System.out.println("Is eating");
-						return true;
-						
-					}
-					else
-					{
-						lastX = snakeLength.get(j).getX();
-						lastY = snakeLength.get(j).getY();
-					}
-				}
+				return true;
 			}
 		}
 		
