@@ -3,7 +3,10 @@ package Entity;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
 
 import Controllers.gameStateManager;
 import GameStates.playState;
@@ -181,6 +184,15 @@ public class player
 		
 		for(int i =0;i<snakeLength.size();i++)
 		{
+			BufferedImage temp = new BufferedImage(800,600,BufferedImage.TYPE_INT_RGB);
+			try
+			{
+				temp = ImageIO.read(getClass().getResourceAsStream("/player.png"));
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
 			if(i%2 ==1)
 			{
 				g.setColor(Color.YELLOW);
@@ -190,10 +202,12 @@ public class player
 				g.setColor(Color.GREEN);
 			}
 			
-			g.fillRect(snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight);
+			//g.fillRect(snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight);
+			g.drawImage(temp,snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight,null);
 		}
 		
 		g.setColor(Color.BLACK);
+		
 		g.setFont(new Font("Arial",Font.PLAIN,24));
 		g.drawString("Snake Length "+snakeLength.size(),550, 590);
 		

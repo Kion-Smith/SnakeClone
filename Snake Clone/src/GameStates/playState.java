@@ -5,7 +5,9 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.File;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.xml.stream.Location;
 
@@ -22,6 +24,8 @@ public class playState extends gameState
 	public  String[][] map;
 	public long startTime;
 	public long curTime;
+	
+	private BufferedImage img;
 
 	public playState(gameStateManager gsm) 
 	{
@@ -73,6 +77,27 @@ public class playState extends gameState
 		g.setColor(Color.BLACK);
 		g.setFont(new Font("Arial",Font.PLAIN,24));
 		g.drawString("Current Time "+ curTime/100000000,300,590);
+		
+		
+		
+		
+		if(img == null)
+		{
+		    try 
+		    {
+		    	System.out.println("is null");
+		        img = ImageIO.read(getClass().getResourceAsStream("/2b5e04856ab35fe3fe0e89dfdd413d9732828109_full.jpg") );
+		        
+		    } 
+		    catch (Exception e) 
+		    {
+		    	System.out.println("is error");
+		        e.printStackTrace();
+		    }
+		}
+		
+		//g.drawImage(img, 0, 0,800,600, null);
+		
 	}
 
 	public void handleInput() 
