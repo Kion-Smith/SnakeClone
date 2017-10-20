@@ -35,11 +35,16 @@ public class tileMap
 			{
 				subimage = tileSet.getSubimage(i*tileSize, 0, tileSize, tileSize);
 			}
-			
+			///need to add width
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
+	}
+	
+	public void draw()
+	{
+	//draw the subset	
 	}
 }

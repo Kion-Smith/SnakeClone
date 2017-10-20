@@ -202,8 +202,8 @@ public class player
 				g.setColor(Color.GREEN);
 			}
 			
-			//g.fillRect(snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight);
-			g.drawImage(temp,snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight,null);
+		g.fillRect(snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight);
+		//	g.drawImage(temp,snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight,null); exteme lag
 		}
 		
 		g.setColor(Color.BLACK);
