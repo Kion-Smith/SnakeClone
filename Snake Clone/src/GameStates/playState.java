@@ -89,7 +89,7 @@ public class playState extends gameState
 		    try 
 		    {
 		    	System.out.println("is null");
-		        img = ImageIO.read(getClass().getResourceAsStream("/2b5e04856ab35fe3fe0e89dfdd413d9732828109_full.jpg") );
+		        img = ImageIO.read(getClass().getResourceAsStream("/Backgrounds/gameBackground.png") );
 		        
 		    } 
 		    catch (Exception e) 
