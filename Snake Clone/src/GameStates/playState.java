@@ -49,13 +49,15 @@ public class playState extends gameState
 				
 			}
 		}
+		
 		a = new apple(map);
 	}
 
 	public void update() 
 	{	
 		
-		curTime = System.nanoTime() - startTime;
+		curTime = System.nanoTime() - startTime;// keeps running when paused
+		
 		checkSnake();
 		handleInput();
 		collectApple();
@@ -69,18 +71,19 @@ public class playState extends gameState
 	public void draw(Graphics2D g) 
 	{
 		
+		
+		
 		g.setColor(new Color(102, 60, 0));
 		g.fillRect(0,0,800,600);
 		g.setColor(Color.BLACK);
+		
+		g.drawImage(img, 0, 0,800,600, null);
+		
 		p.draw(g);
 		a.draw(g);
 		g.setColor(Color.BLACK);
 		g.setFont(new Font("Arial",Font.PLAIN,24));
 		g.drawString("Current Time "+ curTime/100000000,300,590);
-		
-		
-		
-		
 		if(img == null)
 		{
 		    try 
@@ -96,7 +99,11 @@ public class playState extends gameState
 		    }
 		}
 		
-		//g.drawImage(img, 0, 0,800,600, null);
+		
+		
+		
+		
+		
 		
 	}
 
@@ -106,22 +113,7 @@ public class playState extends gameState
 		{
 			gsm.setPaused(true);
 		}
-		
-		
-		if(keyHandler.prevKeyState[keyHandler.DOWN]!= true )
-		{
-		}
-		if(keyHandler.prevKeyState[keyHandler.UP]!= true )
-		{
-		}
-		if( keyHandler.prevKeyState[keyHandler.LEFT]!= true )
-		{
-		}
-		if(keyHandler.prevKeyState[keyHandler.RIGHT]!= true)
-		{
 
-		}
-		
 		if(keyHandler.isPressed(keyHandler.UP)&& keyHandler.anyKeyDown() == true && !(p.getDirectionDown() ))
 		{
 			
@@ -131,7 +123,7 @@ public class playState extends gameState
 			p.setUp();
 			
 		}
-		if(keyHandler.isPressed(keyHandler.DOWN)&&keyHandler.anyKeyDown() == true && !(p.getDirectionUp() ))
+		else if(keyHandler.isPressed(keyHandler.DOWN)&&keyHandler.anyKeyDown() == true && !(p.getDirectionUp() ))
 		{	
 			p.setDirectionDown(true);
 			p.setDirectionLeft(false);
@@ -139,7 +131,7 @@ public class playState extends gameState
 			p.setDown();
 			
 		}
-		if(keyHandler.isPressed(keyHandler.RIGHT)&&keyHandler.anyKeyDown() == true && !(p.getDirectionLeft() ))
+		else if(keyHandler.isPressed(keyHandler.RIGHT)&&keyHandler.anyKeyDown() == true && !(p.getDirectionLeft() ))
 		{
 			p.setDirectionRight(true);
 			p.setDirectionUp(false);
@@ -147,7 +139,7 @@ public class playState extends gameState
 			p.setRight();
 		
 		}
-		if(keyHandler.isPressed(keyHandler.LEFT)&&keyHandler.anyKeyDown() == true && !(p.getDirectionRight() ))
+		else if(keyHandler.isPressed(keyHandler.LEFT)&&keyHandler.anyKeyDown() == true && !(p.getDirectionRight() ))
 		{
 			p.setDirectionLeft(true);
 			p.setDirectionUp(false);

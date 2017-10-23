@@ -193,15 +193,6 @@ public class player
 			{
 				e.printStackTrace();
 			}
-			if(i%2 ==1)
-			{
-				g.setColor(Color.YELLOW);
-			}
-			else
-			{
-				g.setColor(Color.GREEN);
-			}
-			
 		g.fillRect(snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight);
 		//	g.drawImage(temp,snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight,null); exteme lag
 		}

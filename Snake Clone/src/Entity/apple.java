@@ -31,10 +31,6 @@ public class apple
 		 int x = (int)(Math.random()*40);
 		 int y = (int)(Math.random()*30);
 		 System.out.println("This is rand x: "+x+" | This is rand y:"+y);
-		//aPosX = convert(aPosX);
-		//aPosY = convert(aPosY);
-		
-		//System.out.println(aPosX+"  |  "+aPosY);
 		 
 		 aPosX = Integer.parseInt(m[x][y].substring(0, m[x][y].indexOf(",") ) ); 
 		 aPosY= Integer.parseInt(m[x][y].substring(m[x][y].indexOf(",")+1 ) );
