@@ -184,6 +184,7 @@ public class player
 		
 		for(int i =0;i<snakeLength.size();i++)
 		{
+			/*
 			BufferedImage temp = new BufferedImage(800,600,BufferedImage.TYPE_INT_RGB);
 			try
 			{
@@ -193,6 +194,7 @@ public class player
 			{
 				e.printStackTrace();
 			}
+			*/
 		g.fillRect(snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight);
 		//	g.drawImage(temp,snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight,null); exteme lag
 		}
