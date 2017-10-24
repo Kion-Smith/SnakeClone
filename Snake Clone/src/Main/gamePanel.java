@@ -19,7 +19,7 @@ import Controllers.keyHandler;
 public class gamePanel extends JPanel implements Runnable, KeyListener
 {
 	public static final int WIDTH = 800;
-	public static final int HEIGHT = 600;
+	public static final int HEIGHT = 650;
 	
 	private Thread thread;
 	private boolean running;

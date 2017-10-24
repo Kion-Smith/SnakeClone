@@ -27,7 +27,7 @@ public class pauseState extends gameState
 	{
 		Color c = new Color(102, 102, 102,15);
 		g.setColor(c);
-		g.fillRect(0,0,800,600);
+		g.fillRect(0,0,800,650);
 		
 		
 		g.setColor(Color.BLACK);

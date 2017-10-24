@@ -39,7 +39,7 @@ public class menuState extends gameState
 	public void draw(Graphics2D g) 
 	{
 		g.setColor(Color.RED);
-		g.fillRect(0, 0, 800, 600);
+		g.fillRect(0, 0, 800, 650);
 		
 		g.setColor(Color.BLACK);
 		

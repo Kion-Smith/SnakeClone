@@ -211,10 +211,10 @@ public class player
 			g.drawImage(playerImg,snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight,null);
 		}
 		
-		g.setColor(Color.BLACK);
+		g.setColor(Color.WHITE);
 		
 		g.setFont(new Font("Arial",Font.PLAIN,24));
-		g.drawString("Snake Length "+snakeLength.size(),550, 590);
+		g.drawString("Snake Length "+snakeLength.size(),550, 630);
 		
 	}
 	

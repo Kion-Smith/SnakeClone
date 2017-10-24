@@ -34,7 +34,7 @@ public class gameOverState extends gameState
 	{
 		g.setColor(Color.BLACK);
 		
-		g.fillRect(0,0,800,600);
+		g.fillRect(0,0,800,650);
 		
 		g.setColor(Color.white);
 		g.setFont(new Font("Arial",Font.PLAIN, 24));

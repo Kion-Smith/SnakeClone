@@ -81,9 +81,16 @@ public class playState extends gameState
 		
 		p.draw(g);
 		a.draw(g);
-		g.setColor(Color.BLACK);
+		
+		g.setColor(Color.black);
+		g.fillRect(0, 600, 800, 50);
+		
+		g.setColor(Color.WHITE);
 		g.setFont(new Font("Arial",Font.PLAIN,24));
-		g.drawString("Current Time "+ curTime/100000000,300,590);
+		g.drawString("Current Time "+ curTime/100000000,300,640);
+		
+		g.drawString("Snake Length "+p.snakeSize(),550, 640);
+	
 		if(img == null)
 		{
 		    try 
