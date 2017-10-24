@@ -183,10 +183,10 @@ public class player
 		g.setColor(Color.GREEN);
 		
 		
-		BufferedImage temp = new BufferedImage(800,600,BufferedImage.TYPE_INT_RGB);
+		BufferedImage playerImg = new BufferedImage(800,600,BufferedImage.TYPE_INT_RGB);
 		try
 		{
-			temp = ImageIO.read(getClass().getResourceAsStream("/entity/player.png"));
+			playerImg = ImageIO.read(getClass().getResourceAsStream("/entity/player.png"));
 		}
 		catch(Exception e)
 		{
@@ -208,7 +208,7 @@ public class player
 			}
 			*/
 		//g.fillRect(snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight);
-			g.drawImage(temp,snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight,null);
+			g.drawImage(playerImg,snakeLength.get(i).getX(),snakeLength.get(i).getY(), pWidth, pHeight,null);
 		}
 		
 		g.setColor(Color.BLACK);

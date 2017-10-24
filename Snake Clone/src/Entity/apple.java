@@ -2,6 +2,9 @@ package Entity;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+
+import javax.imageio.ImageIO;
 
 public class apple 
 {
@@ -11,6 +14,8 @@ public class apple
 	
 	public int aPosX =0;
 	public int aPosY =0;
+	
+	BufferedImage appleImg;
 	
 	
 	public apple(String[][] m)
@@ -23,8 +28,18 @@ public class apple
 	}
 	public void draw(Graphics2D g)
 	{
-		g.setColor(Color.RED);
-		g.fillRect(aPosX, aPosY, pWidth, pHeight);
+		appleImg = new BufferedImage(800,600,BufferedImage.TYPE_INT_RGB);
+		try
+		{
+			appleImg = ImageIO.read(getClass().getResourceAsStream("/Entity/apple.png"));
+			g.drawImage(appleImg, aPosX, aPosY, pHeight,pWidth,null);
+		}
+		catch(Exception e)
+		{
+			
+		}
+		//g.setColor(Color.RED);
+		//g.fillRect(aPosX, aPosY, pWidth, pHeight);
 	}
 	public void nextPostion(String[][] m)
 	{
