@@ -25,6 +25,7 @@ public class playState extends gameState
 	public long startTime;
 	public long curTime;
 	
+	
 	private BufferedImage img;
 
 	public playState(gameStateManager gsm) 
@@ -49,7 +50,6 @@ public class playState extends gameState
 				
 			}
 		}
-		
 		a = new apple(map);
 	}
 
@@ -64,7 +64,6 @@ public class playState extends gameState
 		onScreen();
 		
 		p.update();
-		
 		
 	}
 

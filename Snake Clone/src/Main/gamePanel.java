@@ -23,7 +23,7 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 	
 	private Thread thread;
 	private boolean running;
-	private final int FPS = 15;//20  or 15 unsure??
+	private final int FPS = 30;//20  or 15 unsure??
 	private final int targetTime = 1000 / FPS;
 	
 	private BufferedImage image;
@@ -67,7 +67,7 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 			drawToScreen();
 			
 			elapsed = System.nanoTime() - start;
-			wait = targetTime - elapsed / 1000000;
+			wait = targetTime - elapsed / 10000000;
 			
 			if(wait<0)
 				wait = targetTime;
@@ -99,6 +99,7 @@ public class gamePanel extends JPanel implements Runnable, KeyListener
 	
 	private void draw()
 	{
+		
 		gsm.draw(g);
 	}
 	private void drawToScreen()
