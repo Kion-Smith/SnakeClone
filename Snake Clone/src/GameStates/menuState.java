@@ -49,6 +49,7 @@ public class menuState extends gameState
 		
 		try
 		{
+			//testing entities
 			background = ImageIO.read(getClass().getResourceAsStream("/Backgrounds/TitleScreenBackground.png"));
 			apple = ImageIO.read(getClass().getResourceAsStream("/Entity/apple.png"));
 		}
@@ -64,7 +65,7 @@ public class menuState extends gameState
 		g.setFont(new Font("Arial",Font.PLAIN,48));
 		g.drawString("SNAKE", 320, 100);
 		g.setFont(new Font("Arial",Font.PLAIN,18));
-		g.drawString("by Kion Smith", 350, 150);
+		g.drawString("by Kion Smith", 350, 150); 
 		
 		g.setFont(new Font("Arial",Font.PLAIN,24));
 		
