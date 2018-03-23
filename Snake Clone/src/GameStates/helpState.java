@@ -38,6 +38,7 @@ public class helpState extends gameState
 		g.drawString("- Any time in game you can pause by pressing 'Escape' ",0,200);
 		g.drawString("- Contact me to let me know how I can make this better",0,250);
 		g.drawString("Email:: kion_smith@hotmail.com",150,300);
+		g.drawString("My website:: https://kion-smith.github.io/index.html ",50,350);
 		g.setColor(Color.BLUE);
 		g.fillRect(330, 380,20,20);
 		g.drawString("back", 370, 400);

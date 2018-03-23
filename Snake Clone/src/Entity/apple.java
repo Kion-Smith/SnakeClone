@@ -38,11 +38,10 @@ public class apple
 		{
 			
 		}
-		//g.setColor(Color.RED);
-		//g.fillRect(aPosX, aPosY, pWidth, pHeight);
 	}
 	public void nextPostion(String[][] m)
 	{
+		///maybe make a function do this?
 		 int x = (int)(Math.random()*40);
 		 int y = (int)(Math.random()*30);
 		 
